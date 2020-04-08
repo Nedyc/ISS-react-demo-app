@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: ComicNeue;
+    src: url('./fonts/ComicNeue-Regular.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: Pacifico;
+  src: url('./fonts/Pacifico-Regular.ttf');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+body{
+    font-family: ComicNeue;
+    overflow-x: hidden;
+      
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1{
+  font-family: Pacifico;
+  font-size: 60px;
+  transform: rotate(-5deg);
+
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+@media only screen and (max-width: 576px) {
+  h1{
+    font-size: 40px;
+    padding-bottom: 0 !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+#top-logo{
+  width: 48px;
+  height: 48px;
+  background-image: url("images/logo.png");
+  background-size: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+#text-logo{
+  font-size: 15px;
+  margin-top: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
+header svg,
+footer svg{
+  font-size: 20px !important;
+}
+
+footer span{
+  padding: 20px 20px 18px 20px;
+}
+
+.black-bg-opacity{
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.cursor-pointer{
+    cursor: pointer
+}
+
+.cursor-pointer:hover{
+    opacity: .5;
+}
+
+.bg-primary{
+    background-color: #F55D59 !important;
+}
+
+.text-primary{
+  color: #F55D59 !important;
+}
+
+.bg-secondary,
+button.bg-primary:hover{
+    background-color: #282933 !important;
+}
+
+#main_map .leaf_map{
+  height: 50vh;
+}
+
+#main_map .leaf_map,
+#info-block{
+  border-radius: 10px;
+}
+
+#home-card header{
+  height: 25vh;
+}
+
+#main_map #center-map{
+  margin-top: -45px;
+  z-index: 500;
+}
+
+#home-card header{
+  border-radius: 10px 10px 0 0;
+  background-image: url("images/card-header.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#home-card footer{
+  border-radius: 0 0 10px 10px;
+}
+
+
+
+/********CSS LOADER********/
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.small.lds-dual-ring {
+  width: 30px;
+  height: 30px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+#home-card .lds-dual-ring:after{
+  border: 6px solid #000;
+  border-color: #000 transparent #000 transparent;
+}
+
+.small.lds-dual-ring:after {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #000;
+}
+
+@keyframes lds-dual-ring {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
+  
+  /********CSS LOADER********/
