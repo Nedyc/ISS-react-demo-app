@@ -37,6 +37,7 @@ This web app is made using:
 - React 16.13.1
 - Bootstrap 4 
 - Fontawesome 5
+- Animate css
 - Leaflet map
 
 <br />
@@ -49,7 +50,7 @@ You can foind the ISS api defined inside the **/src/iss.js** class and the weath
 
 <br />
 
-# Component structure
+# Components structure
 Components are placed in the **/components** folder and are structured as described below:
 
 ## App.js
