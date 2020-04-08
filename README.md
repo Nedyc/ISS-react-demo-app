@@ -1,68 +1,85 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# About the app
+This app is only a demo made with react to test its functionalities; All it does is to display the ISS station position in real time (the api call refreshes each 5 seconds).<br />
+Moreover it lets the user click on the map returning the next ISS passages (comprehensive of the forecast) over that point.<br />
+Everything is also mobile friendly thanks to the bootstrap 4 library.
 
-## Available Scripts
+<br />
 
-In the project directory, you can run:
+# How to install
+In order to use this app you need to download the latest versions of:<br />
+**NodeJS:** [https://nodejs.org/](https://nodejs.org/)<br />
+**Git:** [https://git-scm.com/](https://git-scm.com/)<br /><br />
 
-### `npm start`
+After the installation open gitbash and clone the project running this command:
+```
+git clone https://github.com/Nedyc/ISS-react-demo-app.git iss-app
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then access the folder
+```
+cd iss-app
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+And install all the dependences with npm
+```
+npm install
+```
 
-### `npm test`
+Finally you can run the app
+```
+npm start
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br />
 
-### `npm run build`
+# Libraries
+This web app is made using:
+- React 16.13.1
+- Bootstrap 4 
+- Fontawesome 5
+- Leaflet map
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br />
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# API
+To track down the position and the prediction of the ISS station the app uses the official api found at [http://open-notify.org/Open-Notify-API/](http://open-notify.org/Open-Notify-API/).<br />
+For what concerns the weather api and forecast I used the metaweather api [https://www.metaweather.com](https://www.metaweather.com).<br />
+Due to a problem with cors during localhost testing I decided to temporarely wrap the api calls inside a my amazon ws host space in order to avoid the cors rejection.<br />
+You can foind the ISS api defined inside the **/src/iss.js** class and the weather ones inside the **/src/weahter.js** class.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br />
 
-### `npm run eject`
+# Component structure
+Components are placed in the **/components** folder and are structured as described below:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## App.js
+![ScreenShot-1](http://www.shamancake.com/github/1.jpg)
+Is obviously where all the components are rendered, you can find it on the **/src** root
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## header.jsx
+![ScreenShot-1](http://www.shamancake.com/github/2.jpg)
+Placed at the top of the screen, it is declared inside the **/components/header.jsx** file
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## footer.jsx
+![ScreenShot-1](http://www.shamancake.com/github/3.jpg)
+On the bottom part you can find the footer, **/components/footer.jsx**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## iss-container.jsx
+![ScreenShot-1](http://www.shamancake.com/github/4.jpg)
+The main section comprehensive of all the main subcomponents: **/components/iss-container.jsx**
 
-## Learn More
+## iss-map.jsx
+![ScreenShot-1](http://www.shamancake.com/github/5.jpg) <br />
+The leaflet map: **/components/iss-map.jsx**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## info-block.jsx
+![ScreenShot-1](http://www.shamancake.com/github/6.jpg) <br />
+Only a div with the map instructions: **/components/info-block.jsx**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## iss-positions.jsx
+![ScreenShot-1](http://www.shamancake.com/github/7.jpg) <br />
+The card containing all the info about the iss position, a short description and the list of prediction positions: **/components/iss-positions.jsx**
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## iss-position.jsx
+![ScreenShot-1](http://www.shamancake.com/github/8.jpg) <br />
+The single prediction position template row: **/components/iss-position.jsx**
